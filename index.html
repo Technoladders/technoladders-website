@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technoladders Solutions Private Limited</title>
+
+    <!-- Preconnect for faster font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+
+    <!-- favicon -->
+<!-- Favicons - updated path to assets/fav/ -->
+
+<!-- Primary favicon (fallback for older browsers) -->
+<link rel="icon" href="assets/fav/favicon.ico" type="image/x-icon">
+
+<!-- Standard PNG sizes for browser tabs (sharp on retina/high-DPI) -->
+<link rel="icon" type="image/png" sizes="16x16" href="assets/fav/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/fav/favicon-32x32.png">
+
+<!-- iOS / Apple home screen icon -->
+<link rel="apple-touch-icon" sizes="180x180" href="assets/fav/apple-touch-icon.png">
+
+<!-- Android / Chrome home screen & PWA -->
+<link rel="icon" type="image/png" sizes="192x192" href="assets/fav/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/fav/android-chrome-512x512.png">
+
+<!-- Web App Manifest (tells browsers how to use icons for install/PWA) -->
+<link rel="manifest" href="assets/fav/site.webmanifest">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
+    <!-- Load Font Awesome CSS asynchronously -->
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" media="print" onload="this.media='all'">
+
+    <!-- fontello font css -->
+    <link rel="stylesheet" href="assets/css/plugins/fontello-enqueue.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="assets/css/plugins/fontello-icons.css" media="print" onload="this.media='all'">
+
+    <!-- others css -->
+    <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+    <!-- Async css components -->
+    <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.min.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.min.css">
+    </noscript>
+
+    <link rel="stylesheet" href="assets/css/plugins/lightgallery-bundle.min.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="assets/css/plugins/lightgallery-bundle.min.css">
+    </noscript>
+
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <img src="assets/pictures/logos/TLS-loader.png" alt="Loading...">
+        </div>
+    </div>
+    <!-- End Preloader -->
+
+    <button id="themeBtn"><i class="far fa-moon"></i></button>
+
+    <div class="video-modal">
+        <div class="video-modal-content">
+            <span class="close-btn">&times;</span>
+            <iframe allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="search-popup" data-popup="1">
+        <div class="search-popup-content">
+            <form>
+                <button type="submit"><i class="fa fa-search"></i></button>
+                <input type="text" placeholder="Type Your Search..." required>
+            </form>
+            <button type="button" class="close-popup"></button>
+        </div>
+    </div>
+
+    <!-- Side Menu -->
+    <div class="side-menu" id="sideMenu">
+        <div class="overlay" id="overlay"></div>
+        <a href="javascript:void(0)" class="close-btn" id="closeBtn"><i class="fa fa-close"></i> close</a>
+        <div class="menu-content">
+            <a class='logo' href='index.html'><img width="200" height="auto" src="assets/pictures/logos/technoladders_logo_dark.png" alt="Technoladders"></a>
+            <div class="sidebar-menu">
+                <h4 class="title">Contacts</h4>
+                <p>O No 9 N No 17, Seethammal Road,<br>Alwarpet, Chennai – 600018,<br>Tamil Nadu, India</p>
+                <a href="mailto:info@technoladders.com" class="email">info@technoladders.com</a>
+                <a href="contact.html" title="" class="ibt-btn ibt-btn-outline-3 ibt-btn-rounded"><span>Get in Touch</span></a>
+            </div>
+            <ul class="social-icon">
+                <li><a href="#" title=""><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#" title=""><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#" title=""><i class="fab fa-linkedin-in"></i></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div data-menu="mobileMenu" class="side-menu2">
+        <div class="menu-btns">
+            <a href="#" class="popup-search" data-popup="1"><i class="fa fa-search"></i></a>
+            <button id="mobileCloseBtn2" class="close-btn"></button>
+        </div>
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="#">Services</a>
+                <ul>
+                    <li><a href='salesforce.html'>Salesforce Consulting</a></li>
+                    <li><a href='sap.html'>SAP Consulting</a></li>
+                    <li><a href='servicenow.html'>ServiceNow Consulting</a></li>
+                    <li><a href='ai.html'>AI Consulting</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="about.html">About</a>
+            </li>
+            <li>
+                <a href="contact.html">Contact</a>
+            </li>
+        </ul>
+        <div class="menu-contact">
+            <span>Contacts</span>
+            <a href="mailto:info@technoladders.com" title="" class="gmail">info@technoladders.com</a>
+        </div>
+        <div class="menu-links">
+            <span>Follow us:</span>
+            <ul class="social-icon">
+                <li><a href="#" title=""><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#" title=""><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#" title=""><i class="fab fa-linkedin-in"></i></a></li>
+            </ul>
+            <a href="contact.html" title="" class="ibt-btn ibt-btn-outline-3 ibt-btn-rounded">
+                <span>Get in Touch</span>
+            </a>
+        </div>
+    </div>
+    <!-- Overlay for Mobile Menu -->
+    <div class="overlay2"></div>
+
+    <!-- sticky header -->
+    <header class="sticky-active">
+        <div class="header-menu-area3">
+            <div class="row gx-20 align-items-center justify-content-between">
+                <div class="col-auto">
+                    <div class="header-logo">
+                        <a href="javascript:void(0)" class="menu-toggle"></a>
+                        <a href='index.html'>
+                            <img src="assets/pictures/logos/Technoladders_logo.png" alt="Technoladders">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <nav class="main-menu menu-style1">
+                        <ul>
+                            <li>
+                                <a class='active' href='index.html'>
+                                    <span class="menu-item">Home</span>
+                                    <span class="menu-item2">Home</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="menu-item">Services</span>
+                                    <span class="menu-item2">Services</span>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li><a href='salesforce.html'>Salesforce Consulting</a></li>
+                                    <li><a href='sap.html'>SAP Consulting</a></li>
+                                    <li><a href='servicenow.html'>ServiceNow Consulting</a></li>
+                                    <li><a href='ai.html'>AI Consulting</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href='about.html'>
+                                    <span class="menu-item">About</span>
+                                    <span class="menu-item2">About</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href='contact.html'>
+                                    <span class="menu-item">Contact</span>
+                                    <span class="menu-item2">Contact</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-auto d-none d-xl-block">
+                    <div class="btn-box">
+                        <a href="#" class="popup-search" data-popup="1"><i class="fa fa-search"></i></a>
+                        <a class='ibt-btn ibt-btn-outline-3 ibt-btn-rounded' href='contact.html' title>
+                            <span>Get in Touch</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <button class="hamburger popup-menu" data-menu="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+    <!-- End sticky header -->
+
+    <!--======== Header ========-->
+    <header class="vs-header3">
+        <div class="container2 position-relative">
+            <div class="header-menu-area3">
+                <div class="row gx-20 align-items-center justify-content-between">
+                    <div class="col-auto">
+                        <div class="header-logo">
+                            <a href="javascript:void(0)" class="menu-toggle"></a>
+                            <a href='index.html'>
+                                <img src="assets/pictures/logos/Technoladders_logo.png" alt="Technoladders">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <nav class="main-menu menu-style1">
+                            <ul>
+                                <li>
+                                    <a class='active' href='index.html'>
+                                        <span class="menu-item">Home</span>
+                                        <span class="menu-item2">Home</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="menu-item">Services</span>
+                                        <span class="menu-item2">Services</span>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li><a href='salesforce.html'>Salesforce Consulting</a></li>
+                                        <li><a href='sap.html'>SAP Consulting</a></li>
+                                        <li><a href='servicenow.html'>ServiceNow Consulting</a></li>
+                                        <li><a href='ai.html'>AI Consulting</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href='about.html'>
+                                        <span class="menu-item">About</span>
+                                        <span class="menu-item2">About</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='contact.html'>
+                                        <span class="menu-item">Contact</span>
+                                        <span class="menu-item2">Contact</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-auto d-none d-xl-block">
+                        <div class="btn-box">
+                            <a href="#" class="popup-search" data-popup="1"><i class="fa fa-search"></i></a>
+                            <a class='ibt-btn ibt-btn-outline-3 ibt-btn-rounded' href='contact.html' title>
+                                <span>Get in Touch</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <button class="hamburger popup-menu" data-menu="mobileMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!--======== / Header ========-->
+
+    <!-- Hero Banner -->
+    <section class="contact-banner2">
+        <div class="container4">
+            <div class="row align-items-end">
+                <div class="col-lg-9 col-md-9">
+                    <div class="contact-banner-content2">
+                        <h2 class="title"><span>Transform your enterprise</span> & achieve real results with Technoladders
+</h2>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <div class="btn-box3">
+                        <a class='contact-btn' href='about.html'>
+                            <span class="text">Discover</span>
+                            <span class="border-outer"></span>
+                            <span class="border-inner"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Hero Banner -->
+
+    <!-- service-sec3 — Services Overview -->
+    <section class="service-sec5">
+        <div class="container2">
+            <div class="row">
+                <div class="col-xl-4 col-lg-6 col-md-12">
+                    <div class="ser-card5">
+                        <img src="assets/images/service/ser5-1.png" alt="Enterprise Consulting">
+                        <div class="ser-content5">
+                            <div class="ser-text3">
+                                <a href="salesforce.html" title="">Salesforce</a>
+                                <a href="sap.html" title="">SAP</a>
+                                <a href="servicenow.html" title="">ServiceNow</a>
+                                <a href="ai.html" title="">AI</a>
+                            </div>
+                            <h4 class="title">Enterprise platform consulting from India</h4>
+                            <p>From CRM and ERP transformations to IT service management and AI adoption, our teams partner with clients end-to-end.</p>
+                            <a href="salesforce.html" title="" class="ser-btn3">Explore more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-8 col-lg-6 col-md-12">
+                    <div class="ser-card5 v2">
+                        <img src="assets/pictures/Home/section-v2.png" alt="Team">
+                        <div class="ser-counter">
+                            <div class="counter-box6">
+                                <span class="counter-number percent-counter" data-target="40">0</span>
+                                <span class="counter-text">+</span>
+                            </div>
+                            <span class="title">Customers</span>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End service-sec3 -->
+
+    <!-- Partners / Platforms -->
+<section class="neural-playground3 ibt-section-gap">
+    <div class="container3">
+        <div class="row align-items-center">
+            <div class="col-lg-2">
+                <div class="neural-img3">
+                    <img src="assets/images/layers/layer3.png" alt="Layer">
+                </div>
+            </div>
+            <div class="col-lg-10">
+                <div class="neural-content">
+                    <h2 class="gradient-title">
+                        Platform specialists across 
+                        <span>Salesforce, SAP, ServiceNow & AI</span> 
+                         enabling integrated digital transformation
+                    </h2>
+
+                    <!-- New icon services grid (replaces swiper brand carousel) -->
+                    <div class="services-icons-grid">
+                        <div class="service-icon-item">
+                         <i class="fa-brands fa-salesforce " style="color: rgba(116, 192, 252, 1);"></i>
+                            <span>Salesforce</span>
+                        </div>
+                        <div class="service-icon-item">
+                            <img src="assets/pictures/Home/sap-color.svg" 
+                                 alt="SAP" width="80" height="80">
+                            <span>SAP</span>
+                        </div>
+                        <div class="service-icon-item">
+                            <img src="https://cdn.simpleicons.org/servicenow/51A9F9" 
+                                 alt="ServiceNow" width="80" height="80"
+                                 onerror="this.src='https://cdn.simpleicons.org/cloudflare/F38020'; this.alt='ServiceNow (placeholder)';">
+                            <span>ServiceNow</span>
+                        </div>
+                        <div class="service-icon-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="120px" height="70px" ><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M260.4 249.8L260.4 201.2C260.4 197.1 261.9 194 265.5 192L363.3 135.7C376.6 128 392.5 124.4 408.9 124.4C470.3 124.4 509.3 172 509.3 222.7C509.3 226.3 509.3 230.4 508.8 234.5L407.3 175.1C401.2 171.5 395 171.5 388.9 175.1L260.4 249.8zM488.7 439.2L488.7 323C488.7 315.8 485.6 310.7 479.5 307.1L351 232.4L393 208.3C396.6 206.3 399.7 206.3 403.2 208.3L501 264.7C529.2 281.1 548.1 315.9 548.1 349.7C548.1 388.6 525.1 424.5 488.7 439.3L488.7 439.3zM230.2 336.8L188.2 312.2C184.6 310.2 183.1 307.1 183.1 303L183.1 190.4C183.1 135.6 225.1 94.1 281.9 94.1C303.4 94.1 323.4 101.3 340.3 114.1L239.4 172.5C233.3 176.1 230.2 181.2 230.2 188.4L230.2 336.9L230.2 336.9zM320.6 389L260.4 355.2L260.4 283.5L320.6 249.7L380.8 283.5L380.8 355.2L320.6 389zM359.3 544.7C337.8 544.7 317.8 537.5 300.9 524.7L401.8 466.3C407.9 462.7 411 457.6 411 450.4L411 301.9L453.5 326.5C457.1 328.5 458.6 331.6 458.6 335.7L458.6 448.3C458.6 503.1 416.1 544.6 359.3 544.6L359.3 544.6zM237.8 430.5L140.1 374.2C111.9 357.8 93 323 93 289.2C93 249.8 116.6 214.4 152.9 199.6L152.9 316.3C152.9 323.5 156 328.6 162.1 332.2L290.1 406.4L248.1 430.5C244.5 432.5 241.4 432.5 237.9 430.5zM232.2 514.5C174.3 514.5 131.8 471 131.8 417.2C131.8 413.1 132.3 409 132.8 404.9L233.7 463.3C239.8 466.9 246 466.9 252.1 463.3L380.6 389.1L380.6 437.7C380.6 441.8 379.1 444.9 375.5 446.9L277.7 503.2C264.4 510.9 248.5 514.5 232.1 514.5L232.1 514.5zM359.2 575.4C421.2 575.4 472.9 531.4 484.6 473C541.9 458.1 578.8 404.4 578.8 349.6C578.8 313.8 563.4 278.9 535.8 253.9C538.4 243.1 539.9 232.4 539.9 221.6C539.9 148.4 480.5 93.6 411.9 93.6C398.1 93.6 384.8 95.6 371.5 100.3C348.5 77.8 316.7 63.4 281.9 63.4C219.9 63.4 168.2 107.4 156.5 165.8C99.2 180.6 62.3 234.4 62.3 289.2C62.3 325 77.7 359.9 105.3 384.9C102.7 395.7 101.2 406.4 101.2 417.2C101.2 490.4 160.6 545.2 229.2 545.2C243 545.2 256.3 543.2 269.6 538.5C292.6 561 324.4 575.4 359.2 575.4z"/></svg>
+                            <span>AI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- End Partners -->
+
+    <!-- Core Services Grid -->
+    <section class="service-sec6">
+        <div class="title-area">
+            <div class="container">
+                <div class="row end">
+                    <div class="col-xl-6 col-lg-12">
+                        <div class="sec-title mb-0">
+                            <!-- <span class="sub-title">services</span> -->
+                            <h2 class="title animated-heading">Our consulting services to accelerate your business
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-12">
+                        <div class="sec-btn-box">
+                            <p>Strategy, implementation, and managed services for enterprise platforms</p>
+                            <a class='ibt-btn ibt-btn-outline' href='contact.html' title>
+                                <span>Talk to Us</span>
+                                <i class="icon-arrow-top"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container2">
+            <div class="row">
+                <div class="col-xl-3 col-lg-6 col-md-6">
+                    <div class="ser-card">
+                        <img src="assets/images/service/service6-1.png" alt="Salesforce">
+                        <div class="ser-content">
+                            <h4 class="title"><a href="salesforce.html" title="">Salesforce Consulting</a></h4>
+                            <p>Elevate customer relationships. CRM strategy, implementation, migration &amp; managed services.</p>
+                        </div>
+                        <a href="salesforce.html" class="ser-btn">
+                            <i class="icon fontello icon-button-arrow"></i>
+                            <i class="icon2 fontello icon-button-arrow"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6">
+                    <div class="ser-card">
+                        <img src="assets/images/service/service6-2.png" alt="SAP">
+                        <div class="ser-content v2">
+                            <h4 class="title"><a href="sap.html" title="">SAP Consulting</a></h4>
+                            <p>Turn SAP into a growth platform. S/4HANA migration, advisory &amp; application management.</p>
+                        </div>
+                        <a href="sap.html" class="ser-btn">
+                            <i class="icon fontello icon-button-arrow"></i>
+                            <i class="icon2 fontello icon-button-arrow"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6">
+                    <div class="ser-card v3">
+                        <img src="assets/images/service/service6-3.png" alt="ServiceNow">
+                        <h3 class="title"><a href="servicenow.html">ServiceNow Consulting</a></h3>
+                    </div>
+                    <div class="ser-card v4">
+                        <div class="ser-content">
+                            <img src="assets/images/icon/phone.svg" alt="Icon">
+                            <h4 class="title"><a href="servicenow.html" title="">ITSM &amp; Workflow Automation</a></h4>
+                            <p>Streamline IT and business operations with ServiceNow implementation &amp; support.</p>
+                        </div>
+                        <a href="servicenow.html" class="ser-btn">
+                            <i class="icon fontello icon-button-arrow"></i>
+                            <i class="icon2 fontello icon-button-arrow"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6">
+                    <div class="ser-card v5">
+                        <img src="assets/images/service/service6-5.png" alt="AI">
+                        <div class="ser-content v2">
+                            <h4 class="title"><a href="ai.html" title="">AI Consulting</a></h4>
+                            <p>Make AI a practical advantage. Strategy, POCs, implementation &amp; production support.</p>
+                        </div>
+                        <a href="ai.html" class="ser-btn">
+                            <i class="icon fontello icon-button-arrow"></i>
+                            <i class="icon2 fontello icon-button-arrow"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Core Services Grid -->
+
+    <!-- Platforms We Integrate -->
+    <!-- <section class="service-sec7">
+        <div class="container2">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="service-content7">
+                        <h4 class="title">Platforms &amp; ecosystems we work with</h4>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="service-box7">
+                        <div class="social-link3">
+                            <i class="fa-brands fa-salesforce " style="color: rgba(116, 192, 252, 1);"></i>
+                            <span>Salesforce</span>
+                        </div>
+                        <div class="social-link3">
+                           <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>SAP</title><path fill="#87CEEB" d="M0 6.064v11.872h12.13L24 6.064zm3.264 2.208h.005c.863.001 1.915.245 2.676.633l-.82 1.43c-.835-.404-1.255-.442-1.73-.467-.708-.038-1.064.215-1.069.488-.007.332.669.633 1.305.838.964.306 2.19.715 2.377 1.9L7.77 8.437h2.046l2.064 5.576-.007-5.575h2.37c2.257 0 3.318.764 3.318 2.519 0 1.575-1.09 2.514-2.936 2.514h-.763l-.01 2.094-3.588-.003-.25-.908c-.37.122-.787.189-1.23.189-.456 0-.885-.071-1.263-.2l-.358.919-2 .006.09-.462c-.029.025-.057.05-.087.074-.535.43-1.208.629-2.037.644l-.213.002a5.075 5.075 0 0 1-2.581-.675l.73-1.448c.79.467 1.286.572 1.956.558.347-.007.598-.07.761-.239a.557.557 0 0 0 .156-.369c.007-.376-.53-.553-1.185-.756-.531-.164-1.135-.389-1.606-.735-.559-.41-.825-.924-.812-1.65a1.99 1.99 0 0 1 .566-1.377c.519-.537 1.357-.863 2.363-.863zm10.597 1.67v1.904h.521c.694 0 1.247-.23 1.248-.964 0-.709-.554-.94-1.248-.94zm-5.087.767l-.748 2.362c.223.085.481.133.757.133.268 0 .52-.047.742-.126l-.736-2.37z"/></svg>
+                            <span>SAP</span>
+                        </div>
+                        <div class="social-link3">
+                           <img src="https://cdn.simpleicons.org/servicenow/51A9F9" 
+                                 alt="ServiceNow" width="80" height="80"
+                                 onerror="this.src='https://cdn.simpleicons.org/cloudflare/F38020'; this.alt='ServiceNow (placeholder)';">
+
+                            <span>ServiceNow</span>
+                        </div>
+                        <div class="social-link3">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="120px" height="70px" ><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="#ffffff" d="M260.4 249.8L260.4 201.2C260.4 197.1 261.9 194 265.5 192L363.3 135.7C376.6 128 392.5 124.4 408.9 124.4C470.3 124.4 509.3 172 509.3 222.7C509.3 226.3 509.3 230.4 508.8 234.5L407.3 175.1C401.2 171.5 395 171.5 388.9 175.1L260.4 249.8zM488.7 439.2L488.7 323C488.7 315.8 485.6 310.7 479.5 307.1L351 232.4L393 208.3C396.6 206.3 399.7 206.3 403.2 208.3L501 264.7C529.2 281.1 548.1 315.9 548.1 349.7C548.1 388.6 525.1 424.5 488.7 439.3L488.7 439.3zM230.2 336.8L188.2 312.2C184.6 310.2 183.1 307.1 183.1 303L183.1 190.4C183.1 135.6 225.1 94.1 281.9 94.1C303.4 94.1 323.4 101.3 340.3 114.1L239.4 172.5C233.3 176.1 230.2 181.2 230.2 188.4L230.2 336.9L230.2 336.9zM320.6 389L260.4 355.2L260.4 283.5L320.6 249.7L380.8 283.5L380.8 355.2L320.6 389zM359.3 544.7C337.8 544.7 317.8 537.5 300.9 524.7L401.8 466.3C407.9 462.7 411 457.6 411 450.4L411 301.9L453.5 326.5C457.1 328.5 458.6 331.6 458.6 335.7L458.6 448.3C458.6 503.1 416.1 544.6 359.3 544.6L359.3 544.6zM237.8 430.5L140.1 374.2C111.9 357.8 93 323 93 289.2C93 249.8 116.6 214.4 152.9 199.6L152.9 316.3C152.9 323.5 156 328.6 162.1 332.2L290.1 406.4L248.1 430.5C244.5 432.5 241.4 432.5 237.9 430.5zM232.2 514.5C174.3 514.5 131.8 471 131.8 417.2C131.8 413.1 132.3 409 132.8 404.9L233.7 463.3C239.8 466.9 246 466.9 252.1 463.3L380.6 389.1L380.6 437.7C380.6 441.8 379.1 444.9 375.5 446.9L277.7 503.2C264.4 510.9 248.5 514.5 232.1 514.5L232.1 514.5zM359.2 575.4C421.2 575.4 472.9 531.4 484.6 473C541.9 458.1 578.8 404.4 578.8 349.6C578.8 313.8 563.4 278.9 535.8 253.9C538.4 243.1 539.9 232.4 539.9 221.6C539.9 148.4 480.5 93.6 411.9 93.6C398.1 93.6 384.8 95.6 371.5 100.3C348.5 77.8 316.7 63.4 281.9 63.4C219.9 63.4 168.2 107.4 156.5 165.8C99.2 180.6 62.3 234.4 62.3 289.2C62.3 325 77.7 359.9 105.3 384.9C102.7 395.7 101.2 406.4 101.2 417.2C101.2 490.4 160.6 545.2 229.2 545.2C243 545.2 256.3 543.2 269.6 538.5C292.6 561 324.4 575.4 359.2 575.4z"/></svg>
+                         
+
+                         
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+    <!-- End Platforms -->
+
+    <!-- Marquee -->
+    <section class="marquee-sec">
+        <h2 style="display:none;">Marquee Section</h2>
+        <div class="marquee">
+            <div class="marquee-inner">
+                <span>Enterprise platforms. AI-driven transformation. India-based, global mindset.</span>
+                <span>Enterprise platforms. AI-driven transformation. India-based, global mindset.</span>
+            </div>
+        </div>
+    </section>
+    <!-- End Marquee -->
+
+    <!-- Why Technoladders — Features -->
+    <section class="feature-sec1 ibt-section-gap">
+        <div class="container">
+            <div class="sec-title">
+                
+                <h2 class="title animated-heading">What sets us apart as your technology partner
+                </h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="feature-card">
+                        <img src="assets/images/feature/feature1.svg" alt="Feature">
+                        <h4 class="title">India-based, Global Mindset</h4>
+                        <p>Cost-effective delivery from Tamil Nadu with global standards in architecture, security, and governance.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="feature-card">
+                        <img src="assets/images/feature/feature2.svg" alt="Feature">
+                        <h4 class="title">Platform Specialists</h4>
+                        <p>Deep expertise across Salesforce, SAP, ServiceNow, and AI — enabling integrated transformation.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="feature-card">
+                        <img src="assets/images/feature/feature3.svg" alt="Feature">
+                        <h4 class="title">End-to-End Partnership</h4>
+                        <p>From early advisory and solution design to delivery and managed services — accountable for outcomes.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="feature-card">
+                        <img src="assets/images/feature/feature4.svg" alt="Feature">
+                        <h4 class="title">AI-Powered Innovation</h4>
+                        <p>We embed AI and analytics into your critical processes for measurable business impact.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Features -->
+
+    <!-- About Section -->
+    <section class="about-us-sec3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="about-img3">
+                        <img src="assets/images/layers/layer10.png" alt="About Technoladders">
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="about-content3">
+                        <h2 class="style-text3">Technoladders</h2>
+                        <div class="sec-title mb-0">
+                           
+                            <h2 class="title animated-heading">Technology consulting that delivers real business outcomes
+                            </h2>
+                            <p>Technoladders Solutions Private Limited is a technology consulting company based in Tamil Nadu, India, helping businesses modernize their operations with enterprise platforms, AI, and cloud-native solutions.</p>
+                            <p class="paragraph">Established in March 2021, we focus on computer and related services, combining functional expertise with strong engineering capabilities.</p>
+                            <div class="about-counter3">
+                                <a class='ibt-btn ibt-btn-outline' href='about.html' title>
+                                    <span>Learn More</span>
+                                    <i class="icon-arrow-top"></i>
+                                </a>
+                                <div class="counter-box7">
+                                    <span class="counter-number percent-counter" data-target="200">0</span>
+                                    <span class="counter-text">+</span>
+                                </div>
+                                <span class="title2">Service areas: Salesforce, SAP, ServiceNow &amp; AI</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About -->
+
+    <!-- main-sec: Contact + Footer -->
+    <section class="main-sec">
+        <!-- contact-sec -->
+        <div class="contact-sec ibt-section-gap">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="contact-content">
+                            <div class="sec-title white">
+                               
+                                <h2 class="title animated-heading">Ready to start or accelerate your digital transformation?</h2>
+                                <p>Share your requirements and we will help you define the right approach, timelines, and delivery model.</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="contact-info">
+                                        <div class="call-center">
+                                            <h4 class="title">Email</h4>
+                                            <a href="mailto:info@technoladders.com" class="gmail">info@technoladders.com</a>
+                                        </div>
+                                        <div class="call-center mb-0">
+                                            <h4 class="title">Social Network</h4>
+                                            <ul class="social-icon">
+                                                <li><a href="#" target="_blank" title=""><i class="fab fa-facebook-f"></i></a></li>
+                                                <li><a href="#" target="_blank" title=""><i class="fab fa-twitter"></i></a></li>
+                                                <li><a href="#" target="_blank" title=""><i class="fab fa-linkedin-in"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="contact-info">
+                                        <div class="call-center">
+                                            <h4 class="title">Registered Office</h4>
+                                            <p>O No 9 N No 17, Seethammal Road,<br>Alwarpet, Chennai – 600018,<br>Tamil Nadu, India</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="contact-form">
+                            <form action="#" method="post" class="custom-form">
+                                <h2>Get in Touch</h2>
+                                <input type="text" id="name" name="name" placeholder="Full name" required>
+                                <input type="email" id="email" name="email" placeholder="Email" required>
+                                <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                                <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
+                                <button type="submit" class="ibt-btn ibt-btn-outline">
+                                    <span>Send Message</span>
+                                    <i class="icon-arrow-top"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End contact-sec -->
+
+        <!-- Footer -->
+        <footer class="footer-style1">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="footer-content">
+                        <h2 class="title">Transform your business with Technoladders</h2>
+                        <a href="contact.html" title="" class="ibt-btn ibt-btn-outline">
+                            <span>Get a Quote</span>
+                            <i class="icon-arrow-top"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="widget-area ibt-section-gapTop">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-8 col-lg-6">
+                            <div class="about-widget footer-widget">
+                                <div class="footer-logo">
+                                    <img width="200" height="auto" src="assets/pictures/logos/Technoladders_logo.png" alt="Technoladders">
+                                </div>
+                                <ul class="social-icon">
+                                    <li><a href="#" target="_blank" title=""><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#" target="_blank" title=""><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/company/technoladders/" target="_blank" title=""><i class="fab fa-linkedin-in"></i></a></li>
+                                </ul>
+                                <h2 class="title">since 2021</h2>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6">
+                            <div class="footer-menu">
+                                <div class="footer-links footer-widget">
+                                    <h4 class="widget-title">Company</h4>
+                                    <ul>
+                                        <li><a href='about.html' title>About</a></li>
+                                        <li><a href="contact.html" title="">Contact</a></li>
+                                    </ul>
+                                </div>
+                                <div class="footer-links footer-widget">
+                                    <h4 class="widget-title">Services</h4>
+                                    <ul>
+                                        <li><a href="salesforce.html" title="">Salesforce Consulting</a></li>
+                                        <li><a href="sap.html" title="">SAP Consulting</a></li>
+                                        <li><a href="servicenow.html" title="">ServiceNow Consulting</a></li>
+                                        <li><a href="ai.html" title="">AI Consulting</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-botom">
+                <div class="container">
+                    <div class="footer-box">
+                        <p><a href="#">©Technoladders Solutions Pvt. Ltd.</a> 2025. All rights reserved.</p>
+                        <span>Terms of use <a href="#">Privacy Policy</a></span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
+    </section>
+    <!-- End main-sec -->
+
+    <!-- Scroll Button -->
+    <button id="scrollBtn" title="Go to top">
+        <i class="fas fa-angle-up"></i>
+    </button>
+
+    <!-- Js Plugin -->
+    <script src="assets/js/bootstrap.min.js" defer></script>
+    <script src="assets/js/vendor/swiper-bundle.min.js" defer></script>
+    <script src="assets/js/vendor/lenis.min.js" defer></script>
+    <script src="assets/js/vendor/gsap.min.js" defer></script>
+    <script src="assets/js/vendor/ScrollTrigger.min.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+</body>
+</html>
