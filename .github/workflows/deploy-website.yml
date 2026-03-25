@@ -25,7 +25,7 @@ jobs:
         with:
           context: . # Build from the root of this repo
           push: true
-          tags: yourdockerhubusername/technoladders-website:latest # Use your Docker Hub username
+          tags: xrilictechnologies/technoladders-website:latest # Use your Docker Hub username
 
       - name: Deploy to Server
         uses: appleboy/ssh-action@master
@@ -40,7 +40,7 @@ jobs:
             # Create the docker-compose.yml file
             echo "services:
               technoladders-website:
-                image: yourdockerhubusername/technoladders-website:latest
+                image: xrilictechnologies/technoladders-website:latest
                 container_name: technoladders-website
                 restart: unless-stopped
                 ports:
@@ -53,5 +53,5 @@ jobs:
 
             # Navigate to the directory and deploy
             cd /home/deploy/apps/technoladders-website
-            docker pull yourdockerhubusername/technoladders-website:latest
+            docker pull xrilictechnologies/technoladders-website:latest
             docker compose up -d 
