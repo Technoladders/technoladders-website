@@ -54,4 +54,4 @@ jobs:
             # Navigate to the directory and deploy
             cd /home/deploy/apps/technoladders-website
             docker pull yourdockerhubusername/technoladders-website:latest
-            docker compose up -d
+            docker compose up -d 
