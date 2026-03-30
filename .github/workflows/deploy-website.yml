@@ -3,7 +3,7 @@ name: Deploy Technoladders Website
 on:
   push:
     branches:
-      - main  # Trigger only when you push to the main branch
+      - main
   workflow_dispatch:
 
 jobs:
@@ -11,47 +11,66 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1. Checkout code
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # 2. Login to Docker Hub (for push)
       - name: Login to Docker Hub
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build and push Website Docker image
+      # 3. Build and push image
+      - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
-          context: . # Build from the root of this repo
+          context: .
           push: true
-          tags: xrilictechnologies/technoladders-website:latest # Use your Docker Hub username
+          tags: xrilictechnologies/technoladders-website:latest
 
+      # 4. Deploy to VPS via SSH
       - name: Deploy to Server
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            # Create the directory if it doesn't exist
+            echo "🚀 Starting deployment..."
+
+            # Login to Docker Hub on server
+            docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
+
+            # Create app directory
             mkdir -p /home/deploy/apps/technoladders-website
 
-            # Create the docker-compose.yml file
-            echo "services:
+            # Create docker-compose.yml
+            cat > /home/deploy/apps/technoladders-website/docker-compose.yml << 'EOF'
+            services:
               technoladders-website:
                 image: xrilictechnologies/technoladders-website:latest
                 container_name: technoladders-website
                 restart: unless-stopped
                 ports:
-                  - '5025:80' # Use a new, unique port
+                  - "5025:80"
                 networks:
-                  - zivelogin-network-prod
-            networks:
-              zivelogin-network-prod:
-                external: true" > /home/deploy/apps/technoladders-website/docker-compose.yml
+                  - proxy-network-prod
 
-            # Navigate to the directory and deploy
+            networks:
+              proxy-network-prod:
+                external: true
+            EOF
+
+            # Navigate to app
             cd /home/deploy/apps/technoladders-website
+
+            # Pull latest image
             docker pull xrilictechnologies/technoladders-website:latest
-            docker compose up -d 
+
+            # Restart container cleanly
+            docker compose down
+            docker compose up -d --force-recreate
+
+            echo "✅ Deployment completed successfully!"
